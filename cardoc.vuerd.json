@@ -3,8 +3,8 @@
     "version": "2.2.10",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -390,
-    "scrollLeft": -83,
+    "scrollTop": -336,
+    "scrollLeft": -417,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -97,7 +97,7 @@
           "active": false,
           "left": 186.4061,
           "top": 511.2713,
-          "zIndex": 17,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF6D6D"
@@ -156,7 +156,7 @@
             "id": "56ddfb7c-c363-4c0b-9c07-6dceea314223"
           },
           {
-            "name": "brandId",
+            "name": "brand_id",
             "comment": "브랜드 정보",
             "dataType": "BIGINT",
             "default": "",
@@ -179,7 +179,7 @@
             "id": "c864e78c-78cd-4898-913b-4347e93b60fd"
           },
           {
-            "name": "modelId",
+            "name": "model_id",
             "comment": "모델 정보",
             "dataType": "BIGINT",
             "default": "",
@@ -200,36 +200,13 @@
               "widthDefault": 60
             },
             "id": "c94d5f1d-fa8c-4829-92a7-cca5e5bbe6af"
-          },
-          {
-            "name": "specinfoId",
-            "comment": "스펙 정보",
-            "dataType": "BIGINT",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "dd6683c8-0409-4bb4-88f3-24489eed866a"
           }
         ],
         "ui": {
           "active": false,
           "left": 715.5662,
           "top": 749.3341,
-          "zIndex": 20,
+          "zIndex": 61,
           "widthName": 60,
           "widthComment": 87.55294799804688,
           "color": "#00BDFF"
@@ -238,11 +215,11 @@
         "id": "f162e3db-d696-4617-b65c-e290530212cb"
       },
       {
-        "name": "user_trims",
+        "name": "car_owner",
         "comment": "",
         "columns": [
           {
-            "name": "userId",
+            "name": "user_id",
             "comment": "id",
             "dataType": "VARCHAR(32)",
             "default": "",
@@ -265,7 +242,7 @@
             "id": "a8db2b74-cd3b-447e-af55-7342fca61f9c"
           },
           {
-            "name": "trimId",
+            "name": "trim_id",
             "comment": "",
             "dataType": "BIGINT",
             "default": "",
@@ -292,7 +269,7 @@
           "active": false,
           "left": 733.1632,
           "top": 505.8737,
-          "zIndex": 19,
+          "zIndex": 72,
           "widthName": 60,
           "widthComment": 60
         },
@@ -350,7 +327,7 @@
             "id": "0ff35843-62ff-4204-a2a2-7f0cc5255816"
           },
           {
-            "name": "nameEng",
+            "name": "name_eng",
             "comment": "브랜드 영문 이름",
             "dataType": "VARCHAR(32)",
             "default": "",
@@ -396,7 +373,7 @@
             "id": "00e168e0-f7d0-488f-8d23-0c013580276c"
           },
           {
-            "name": "webUrl",
+            "name": "web_url",
             "comment": "웹사이트 주소",
             "dataType": "VARCHAR(128)",
             "default": "",
@@ -423,7 +400,7 @@
           "active": false,
           "left": 1331.1701,
           "top": 577.9107,
-          "zIndex": 31,
+          "zIndex": 41,
           "widthName": 60,
           "widthComment": 72.88896179199219,
           "color": "#00BDFF"
@@ -486,7 +463,7 @@
           "active": false,
           "left": 1349.6965,
           "top": 836.395,
-          "zIndex": 33,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 61.64396667480469,
           "color": "#00BDFF"
@@ -495,7 +472,7 @@
         "id": "4d7af914-77de-4d47-9a06-9e6e9aefd3c8"
       },
       {
-        "name": "specInfos",
+        "name": "spec_infos",
         "comment": "자동차 스펙 정보",
         "columns": [
           {
@@ -520,6 +497,52 @@
               "widthDefault": 60
             },
             "id": "b75308c3-22c9-483d-8050-09970cc0fe14"
+          },
+          {
+            "name": "trim_id",
+            "comment": "차종 정보 참조",
+            "dataType": "BIGINT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 76.30795288085938,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "96d1bbe4-e1da-4ea5-860a-0b0c3e549547"
+          },
+          {
+            "name": "spec_type_id",
+            "comment": "스펙 종류 정보",
+            "dataType": "BIGINT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 70.00291442871094,
+              "widthComment": 76.30795288085938,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e7a95d34-f9ef-46db-9695-7a7e8a90f7cc"
           },
           {
             "name": "name",
@@ -594,12 +617,12 @@
             "name": "unit",
             "comment": "단위",
             "dataType": "VARCHAR(16)",
-            "default": "",
+            "default": "blank",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -614,33 +637,10 @@
             "id": "85aa6d1e-a0bc-4c1e-a597-7cb42d34f527"
           },
           {
-            "name": "multiValues",
+            "name": "multi_values",
             "comment": "",
             "dataType": "VARCHAR(32)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 65.45291137695312,
-              "widthComment": 60,
-              "widthDataType": 78.79087829589844,
-              "widthDefault": 60
-            },
-            "id": "ef493693-c57d-4fce-919f-42c7805f05da"
-          },
-          {
-            "name": "specTypeId",
-            "comment": "스펙 종류 정보",
-            "dataType": "BIGINT",
-            "default": "",
+            "default": "blank",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
@@ -650,21 +650,21 @@
             "ui": {
               "active": false,
               "pk": false,
-              "fk": true,
+              "fk": false,
               "pfk": false,
-              "widthName": 64.20492553710938,
-              "widthComment": 76.30795288085938,
-              "widthDataType": 60,
+              "widthName": 68.41691589355469,
+              "widthComment": 60,
+              "widthDataType": 78.79087829589844,
               "widthDefault": 60
             },
-            "id": "e7a95d34-f9ef-46db-9695-7a7e8a90f7cc"
+            "id": "ef493693-c57d-4fce-919f-42c7805f05da"
           }
         ],
         "ui": {
           "active": false,
-          "left": 715.4478,
-          "top": 1044.3816,
-          "zIndex": 27,
+          "left": 704.4478,
+          "top": 1002.3816,
+          "zIndex": 68,
           "widthName": 60,
           "widthComment": 87.55294799804688,
           "color": "#00BDFF"
@@ -673,7 +673,7 @@
         "id": "148f2476-200e-450d-9931-453dfce5f244"
       },
       {
-        "name": "specTypes",
+        "name": "spec_types",
         "comment": "스펙 종류 ",
         "columns": [
           {
@@ -700,7 +700,7 @@
             "id": "9d11707a-e48a-4c16-831d-fda494e91bd0"
           },
           {
-            "name": "type",
+            "name": "name",
             "comment": "타입",
             "dataType": "VARCHAR(32)",
             "default": "",
@@ -727,8 +727,8 @@
           "active": false,
           "left": 1362.5429,
           "top": 1078.3377,
-          "zIndex": 34,
-          "widthName": 60,
+          "zIndex": 45,
+          "widthName": 60.993927001953125,
           "widthComment": 60,
           "color": "#00BDFF"
         },
@@ -814,7 +814,7 @@
             "c864e78c-78cd-4898-913b-4347e93b60fd"
           ],
           "x": 1130.001044970703,
-          "y": 877.9591,
+          "y": 862.5841,
           "direction": "right"
         },
         "constraintName": "fk_brand_to_trim",
@@ -840,7 +840,7 @@
             "c94d5f1d-fa8c-4829-92a7-cca5e5bbe6af"
           ],
           "x": 1130.001044970703,
-          "y": 792.2091,
+          "y": 787.0841,
           "direction": "right"
         },
         "constraintName": "fk_model_to_trim",
@@ -865,8 +865,8 @@
           "columnIds": [
             "e7a95d34-f9ef-46db-9695-7a7e8a90f7cc"
           ],
-          "x": 1149.9995425537109,
-          "y": 1150.6316,
+          "x": 1143.5495456054687,
+          "y": 1118.8816000000002,
           "direction": "right"
         },
         "constraintName": "fk_spectypes_to_specinfos",
@@ -878,26 +878,26 @@
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "148f2476-200e-450d-9931-453dfce5f244",
-          "columnIds": [
-            "b75308c3-22c9-483d-8050-09970cc0fe14"
-          ],
-          "x": 932.7236712768555,
-          "y": 1044.3816,
-          "direction": "top"
-        },
-        "end": {
           "tableId": "f162e3db-d696-4617-b65c-e290530212cb",
           "columnIds": [
-            "dd6683c8-0409-4bb4-88f3-24489eed866a"
+            "684a14d5-7990-41d8-9fc9-a0c6ea93fded"
           ],
           "x": 922.7836224853515,
-          "y": 920.8341,
+          "y": 900.3341,
           "direction": "bottom"
         },
-        "constraintName": "fk_specinfos_to_trims",
+        "end": {
+          "tableId": "148f2476-200e-450d-9931-453dfce5f244",
+          "columnIds": [
+            "96d1bbe4-e1da-4ea5-860a-0b0c3e549547"
+          ],
+          "x": 923.9986728027344,
+          "y": 1002.3816,
+          "direction": "top"
+        },
+        "constraintName": "fk_trims_to_spec_infos",
         "visible": true,
-        "id": "580d004b-fb56-4d41-94db-540bb7518335"
+        "id": "b7da3706-ef3c-4384-a3e5-30e166e924df"
       }
     ]
   }
