@@ -3,8 +3,8 @@
     "version": "2.2.10",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -322,
-    "scrollLeft": -516,
+    "scrollTop": -336,
+    "scrollLeft": -747,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -95,9 +95,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 529.7395,
-          "top": 472.3828,
-          "zIndex": 2,
+          "left": 249.7402,
+          "top": 450.1596,
+          "zIndex": 79,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF6D6D"
@@ -227,9 +227,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1088.0001,
-          "top": 705.4447,
-          "zIndex": 17,
+          "left": 1373.5558,
+          "top": 673.2218,
+          "zIndex": 85,
           "widthName": 60,
           "widthComment": 61.64396667480469
         },
@@ -289,9 +289,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1098.1113,
-          "top": 480.0001,
-          "zIndex": 52,
+          "left": 1389.2221,
+          "top": 436.6671,
+          "zIndex": 86,
           "widthName": 74.04585266113281,
           "widthComment": 61.64396667480469
         },
@@ -326,29 +326,6 @@
             "id": "ec7944f0-fb84-4bf1-91a9-81c6ff84ba34"
           },
           {
-            "name": "model_name",
-            "comment": "모델 이름",
-            "dataType": "VARCHAR(32)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 70.32792663574219,
-              "widthComment": 60,
-              "widthDataType": 78.79087829589844,
-              "widthDefault": 60
-            },
-            "id": "92b7fcdc-b437-40ea-b474-c46b14e2ee55"
-          },
-          {
             "name": "user_id",
             "comment": "유저 정보",
             "dataType": "VARCHAR(32)",
@@ -372,8 +349,8 @@
             "id": "0ea9603a-fc28-4092-afdf-cb6f8fe298f3"
           },
           {
-            "name": "tire_id",
-            "comment": "타이어 정보",
+            "name": "car_id",
+            "comment": "자동차 정보",
             "dataType": "BIGINT",
             "default": "",
             "option": {
@@ -392,19 +369,127 @@
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "fb437e88-cb4a-44f1-80ab-17764eea2bd7"
+            "id": "9752e1d6-6670-480f-b245-0e9a2f7b2d8b"
           }
         ],
         "ui": {
           "active": false,
-          "left": 527.1113,
-          "top": 717.7773,
-          "zIndex": 50,
+          "left": 799.3336,
+          "top": 438.8887,
+          "zIndex": 81,
           "widthName": 62.618896484375,
           "widthComment": 76.30795288085938
         },
         "visible": true,
         "id": "f90d7679-1be8-45a3-8ca6-d438b50a2115"
+      },
+      {
+        "name": "cars",
+        "comment": "자동차",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "id",
+            "dataType": "BIGINT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "51bc6958-0e00-4320-9b55-91a9b8846fc7"
+          },
+          {
+            "name": "model_name",
+            "comment": "모델 이름",
+            "dataType": "VARCHAR(32)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70.32792663574219,
+              "widthComment": 60,
+              "widthDataType": 78.79087829589844,
+              "widthDefault": 60
+            },
+            "id": "32fdd7d6-ed6d-4f40-a0f6-2509f0687001"
+          },
+          {
+            "name": "front_tire_id",
+            "comment": "전방 타이어 정보",
+            "dataType": "BIGINT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 66.42787170410156,
+              "widthComment": 87.55294799804688,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8af6745d-9dd4-4bc8-90ec-3c133615d190"
+          },
+          {
+            "name": "rear_tire_id",
+            "comment": "후방 타이어 정보",
+            "dataType": "BIGINT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60.90289306640625,
+              "widthComment": 87.55294799804688,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "97a94496-8fa7-45d4-a768-172c352809c8"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 780.6671,
+          "top": 679.7789,
+          "zIndex": 84,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "f188635a-f977-4636-bfc3-02ee4a91d2cb"
       }
     ],
     "indexes": []
@@ -423,8 +508,8 @@
           "columnIds": [
             "11f667a7-36cf-43b9-89ff-56f40f59006f"
           ],
-          "x": 1303.4797463500977,
-          "y": 590.0001,
+          "x": 1594.5905463500976,
+          "y": 546.6671,
           "direction": "bottom"
         },
         "end": {
@@ -432,8 +517,8 @@
           "columnIds": [
             "f8b7206c-433a-4702-9a80-f0695ade572c"
           ],
-          "x": 1310.3039940429687,
-          "y": 705.4447,
+          "x": 1595.8596940429688,
+          "y": 673.2218,
           "direction": "top"
         },
         "constraintName": "fk_tire_types_to_tires",
@@ -449,18 +534,18 @@
           "columnIds": [
             "009680f3-5189-4cbe-84de-60fc9f6f6e46"
           ],
-          "x": 738.7089366455078,
-          "y": 582.3828,
-          "direction": "bottom"
+          "x": 667.6790732910156,
+          "y": 505.1596,
+          "direction": "right"
         },
         "end": {
           "tableId": "f90d7679-1be8-45a3-8ca6-d438b50a2115",
           "columnIds": [
             "0ea9603a-fc28-4092-afdf-cb6f8fe298f3"
           ],
-          "x": 739.4926858032227,
-          "y": 717.7773,
-          "direction": "top"
+          "x": 799.3336,
+          "y": 504.1387,
+          "direction": "left"
         },
         "constraintName": "fk_users_to_users_tires",
         "visible": true,
@@ -475,22 +560,74 @@
           "columnIds": [
             "720a2e42-32c8-4946-a3c0-d3c4bdeb0a3a"
           ],
-          "x": 1088.0001,
-          "y": 791.1947,
+          "x": 1373.5558,
+          "y": 716.0968,
           "direction": "left"
+        },
+        "end": {
+          "tableId": "f188635a-f977-4636-bfc3-02ee4a91d2cb",
+          "columnIds": [
+            "97a94496-8fa7-45d4-a768-172c352809c8"
+          ],
+          "x": 1231.3388529296876,
+          "y": 717.5289,
+          "direction": "right"
+        },
+        "constraintName": "fk_tires_to_cars",
+        "visible": true,
+        "id": "e159cba2-a414-42cc-9a83-8332a10fefd2"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "6f9703d0-eb84-4eb2-99c7-fe447ed3e747",
+          "columnIds": [
+            "720a2e42-32c8-4946-a3c0-d3c4bdeb0a3a"
+          ],
+          "x": 1373.5558,
+          "y": 801.8468,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "f188635a-f977-4636-bfc3-02ee4a91d2cb",
+          "columnIds": [
+            "8af6745d-9dd4-4bc8-90ec-3c133615d190"
+          ],
+          "x": 1231.3388529296876,
+          "y": 793.0289,
+          "direction": "right"
+        },
+        "constraintName": "fk_tires_to_cars",
+        "visible": true,
+        "id": "af2ea2a6-269b-4b28-b28a-760ece9a0eef"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "f188635a-f977-4636-bfc3-02ee4a91d2cb",
+          "columnIds": [
+            "51bc6958-0e00-4320-9b55-91a9b8846fc7"
+          ],
+          "x": 1006.0029764648438,
+          "y": 679.7789,
+          "direction": "top"
         },
         "end": {
           "tableId": "f90d7679-1be8-45a3-8ca6-d438b50a2115",
           "columnIds": [
-            "fb437e88-cb4a-44f1-80ab-17764eea2bd7"
+            "9752e1d6-6670-480f-b245-0e9a2f7b2d8b"
           ],
-          "x": 951.8740716064453,
-          "y": 793.2773,
-          "direction": "right"
+          "x": 1006.5510224853516,
+          "y": 569.3887,
+          "direction": "bottom"
         },
-        "constraintName": "fk_tires_to_users_tires",
+        "constraintName": "fk_cars_to_car_owners",
         "visible": true,
-        "id": "9f1b8cd9-beb7-4b2a-9020-48fb50cb94d4"
+        "id": "6450799c-008d-4754-9052-612b562f095b"
       }
     ]
   }
