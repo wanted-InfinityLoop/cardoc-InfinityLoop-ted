@@ -1,53 +1,22 @@
 from django.db import models
 
 
-class Brand(models.Model):
-    name = models.CharField(max_length=32)
-    name_eng = models.CharField(max_length=32, blank=True, default="")
-    country = models.CharField(max_length=16, blank=True, default="")
-    website_url = models.URLField()
-
-    class Meta:
-        db_table = "brands"
-
-
-class Model(models.Model):
-    name = models.CharField(max_length=32)
-
-    class Meta:
-        db_table = "models"
-
-
-class Trim(models.Model):
-    name = models.CharField(max_length=32)
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    model = models.ForeignKey(Model, on_delete=models.CASCADE)
-
-    class Meta:
-        db_table = "trims"
-
-
-class SpecType(models.Model):
+class TirePosition(models.Model):
     class Type(models.IntegerChoices):
-        FUEL = 1
-        DIMENSION = 2
-        ENGINE = 3
-        DRIVING = 4
+        FRONT = 1
+        REAR = 2
 
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=16)
 
     class Meta:
-        db_table = "spec_types"
+        db_table = "tire_positions"
 
 
-class SpecInfo(models.Model):
-    spec_type = models.ForeignKey(SpecType, on_delete=models.PROTECT)
-    trim = models.ForeignKey(Trim, on_delete=models.CASCADE)
-    name = models.CharField(max_length=32)
-    name_eng = models.CharField(max_length=32)
-    value = models.CharField(max_length=32)
-    unit = models.CharField(max_length=16, blank=True, default="")
-    multi_values = models.CharField(max_length=32, blank=True, default="")
+class Tire(models.Model):
+    tire_position = models.ForeignKey(TirePosition, on_delete=models.PROTECT)
+    width = models.PositiveSmallIntegerField()
+    aspect_ratio = models.PositiveSmallIntegerField()
+    wheel_size = models.PositiveSmallIntegerField
 
     class Meta:
-        db_table = "spec_infos"
+        db_table = "tires"
