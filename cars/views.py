@@ -77,3 +77,39 @@ class CarView(View):
 
         except User.DoesNotExist:
             return JsonResponse({"message": "USER_DOES_NOT_EXIST"}, status=404)
+
+    @login_decorator
+    def get(self, request):
+        user = request.user
+
+        OFFSET = int(request.GET.get("offset", 0))
+        LIMIT = int(request.GET.get("limit", 5))
+
+        if OFFSET < 0 or LIMIT < 0:
+            return JsonResponse({"message": "INVALID_QUERY_PARAMETER"}, status=400)
+
+        owned_cars = CarOwner.objects.select_related("car__front_tire", "car__rear_tire").filter(user_id=user.id)[
+            OFFSET : OFFSET + LIMIT
+        ]
+
+        results = [
+            {
+                "model_name": owned_car.car.model_name,
+                "front_tire": {
+                    "width": owned_car.car.front_tire.width,
+                    "aspect_ratio": owned_car.car.front_tire.aspect_ratio,
+                    "wheel_size": owned_car.car.front_tire.wheel_size,
+                },
+                "rear_tire": {
+                    "width": owned_car.car.rear_tire.width,
+                    "aspect_ratio": owned_car.car.rear_tire.aspect_ratio,
+                    "wheel_size": owned_car.car.rear_tire.wheel_size,
+                },
+            }
+            for owned_car in owned_cars
+        ]
+
+        if not results:
+            return JsonResponse({"message": "NOT_FOUND_CAR_INFORMATION"}, status=404)
+
+        return JsonResponse({"results": results}, status=200)
